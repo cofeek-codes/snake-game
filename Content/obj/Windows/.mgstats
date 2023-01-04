@@ -1,0 +1,7 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/coin.png","C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/bin/Windows/textures/coin.xnb","TextureProcessor","Texture2DContent",267,4181,0,111625
+"C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snake.png","C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/bin/Windows/textures/snake.xnb","TextureProcessor","Texture2DContent",228,4181,0,0017891
+"C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/down.png","C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/bin/Windows/textures/snakeDirections/down.xnb","TextureProcessor","Texture2DContent",257,4181,0,0020648
+"C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/left.png","C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/bin/Windows/textures/snakeDirections/left.xnb","TextureProcessor","Texture2DContent",237,4181,0,0016857
+"C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/right.png","C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/bin/Windows/textures/snakeDirections/right.xnb","TextureProcessor","Texture2DContent",234,4181,0,0014657
+"C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/up.png","C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/bin/Windows/textures/snakeDirections/up.xnb","TextureProcessor","Texture2DContent",256,4181,0,0016258

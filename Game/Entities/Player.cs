@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,7 +12,15 @@ namespace Snake.Entities;
 public class Player
 {
     public Vector2 position { get; set; }
-    private Texture2D texture { get; set; }
+    public Texture2D texture
+    {
+        get
+        {
+            return texturePack[direction.ToString().ToLower()];
+        }
+    }
+
+    private Dictionary<string, Texture2D> texturePack;
 
     public MovementDirection direction { get; set; }
     public Player(Vector2 position)
@@ -19,13 +28,28 @@ public class Player
         this.position = position;
     }
 
-    public void LoadTexture(ContentManager Content)
+    public void LoadTextures(ContentManager Content)
     {
-        texture = Content.Load<Texture2D>("textures/snake");
+        string textureBasepath = "textures/snakeDirections/";
+        texturePack = new Dictionary<string, Texture2D>() {
+            {"up", null},
+            {"down", null},
+            {"right", null},
+            {"left", null},
+        };
+
+        foreach (KeyValuePair<string, Texture2D> texture in texturePack)
+        {
+            texturePack[texture.Key] = Content.Load<Texture2D>(textureBasepath + texture.Key.ToLower());
+
+            Console.WriteLine(texture);
+        }
+
+
 
     }
 
-    public void Draw(SpriteBatch drawer, GameTime gameTime)
+    public void Spawn(SpriteBatch drawer, GameTime gameTime)
     {
         drawer.Draw(texture, position, Color.White);
     }

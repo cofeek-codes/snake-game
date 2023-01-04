@@ -42,7 +42,7 @@ public class Main : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        player.LoadTexture(Content);
+        player.LoadTextures(Content);
     }
 
     protected override void Update(GameTime gameTime)
@@ -66,7 +66,7 @@ public class Main : Game
         _spriteBatch.Begin();
 
         // _spriteBatch.Draw(player.texture, player.position, Color.White);
-        player.Draw(_spriteBatch, gameTime);
+        player.Spawn(_spriteBatch, gameTime);
         _spriteBatch.End();
 
 

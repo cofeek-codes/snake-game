@@ -37,3 +37,7 @@ C:\Users\cofeek-codes\Desktop\myGames\MainSnake\obj\Debug\net6.0-windows\refint\
 C:\Users\cofeek-codes\Desktop\myGames\MainSnake\obj\Debug\net6.0-windows\MainSnake.pdb
 C:\Users\cofeek-codes\Desktop\myGames\MainSnake\obj\Debug\net6.0-windows\MainSnake.genruntimeconfig.cache
 C:\Users\cofeek-codes\Desktop\myGames\MainSnake\obj\Debug\net6.0-windows\ref\MainSnake.dll
+C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content\textures\snakeDirections\down.xnb
+C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content\textures\snakeDirections\left.xnb
+C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content\textures\snakeDirections\right.xnb
+C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content\textures\snakeDirections\up.xnb
