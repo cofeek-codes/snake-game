@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -31,7 +32,9 @@ public class Main : Game
     protected override void Initialize()
     {
         player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2));
-        world = new World(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+        world = new World(_graphics.PreferredBackBufferWidth, _graphics.
+        PreferredBackBufferHeight);
+
         base.Initialize();
     }
 
