@@ -7,11 +7,13 @@ using Microsoft.Xna.Framework.Input;
 
 using Snake.Structs.Enums;
 
+using Engine.Utils.Converters;
+
 namespace Snake.Entities;
 
 public class Player
 {
-    public Vector2 position { get; set; }
+    public Rectangle position { get; set; }
     public Texture2D texture
     {
         get
@@ -23,7 +25,7 @@ public class Player
     private Dictionary<string, Texture2D> texturePack;
 
     public MovementDirection direction { get; set; }
-    public Player(Vector2 position)
+    public Player(Rectangle position)
     {
         this.position = position;
     }
@@ -72,24 +74,24 @@ public class Player
         switch (direction)
         {
             case MovementDirection.DOWN:
-                position = new Vector2(position.X, position.Y + speed);
+                position = RectangleConverter.VectorToRectangle(new Vector2(position.X, position.Y + speed));
                 Console.WriteLine("down");
                 break;
             case MovementDirection.UP:
-                position = new Vector2(position.X, position.Y - speed);
+                position = RectangleConverter.VectorToRectangle(new Vector2(position.X, position.Y - speed));
 
                 Console.WriteLine("up");
 
 
                 break;
             case MovementDirection.LEFT:
-                position = new Vector2(position.X - speed, position.Y);
+                position = RectangleConverter.VectorToRectangle(new Vector2(position.X - speed, position.Y));
 
                 Console.WriteLine("left");
 
                 break;
             case MovementDirection.RIGHT:
-                position = new Vector2(position.X + speed, position.Y);
+                position = RectangleConverter.VectorToRectangle(new Vector2(position.X + speed, position.Y));
 
                 Console.WriteLine("right");
 
