@@ -18,6 +18,7 @@ public class Main : Game
 
     public World world;
 
+    public Coin coin;
     public Main()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -34,6 +35,7 @@ public class Main : Game
         player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2));
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
         PreferredBackBufferHeight);
+        coin = new Coin();
 
         base.Initialize();
     }
@@ -43,6 +45,8 @@ public class Main : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         player.LoadTextures(Content);
+
+        coin.LoadTexture(Content);
     }
 
     protected override void Update(GameTime gameTime)
@@ -65,8 +69,9 @@ public class Main : Game
 
         _spriteBatch.Begin();
 
-        // _spriteBatch.Draw(player.texture, player.position, Color.White);
         player.Spawn(_spriteBatch, gameTime);
+
+
         _spriteBatch.End();
 
 
