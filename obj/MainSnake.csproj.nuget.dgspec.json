@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\MainSnake.csproj": {}
+    "C:\\Users\\cofeek-codes\\Desktop\\myGames\\mainSnake\\MainSnake.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\MainSnake.csproj": {
+    "C:\\Users\\cofeek-codes\\Desktop\\myGames\\mainSnake\\MainSnake.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\MainSnake.csproj",
+        "projectUniqueName": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\mainSnake\\MainSnake.csproj",
         "projectName": "MainSnake",
-        "projectPath": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\MainSnake.csproj",
+        "projectPath": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\mainSnake\\MainSnake.csproj",
         "packagesPath": "C:\\Users\\cofeek-codes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\obj\\",
+        "outputPath": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\mainSnake\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cofeek-codes\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -4,12 +4,12 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/coin.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snake.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/down.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/left.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/right.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/myGames/MainSnake/Content/textures/snakeDirections/up.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/coin.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snake.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/down.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/left.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/right.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/up.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

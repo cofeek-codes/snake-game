@@ -71,6 +71,7 @@ public class Main : Game
 
         player.Spawn(_spriteBatch, gameTime);
 
+        coin.Respawn(world, _spriteBatch);
 
         _spriteBatch.End();
 
