@@ -10,8 +10,10 @@
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/left.png</File>
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/right.png</File>
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/up.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/ui/Default.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

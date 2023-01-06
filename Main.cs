@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using Snake.Entities;
 using Snake.Score;
 using Snake.Structs.Enums;
+using Snake.UI;
 
 namespace Snake;
 
@@ -24,6 +25,8 @@ public class Main : Game
     public Coin coin;
 
     public ScoreManager scoreManager;
+
+    public UIManager ui;
     public Main()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -42,6 +45,8 @@ public class Main : Game
 
         scoreManager = new ScoreManager();
 
+        ui = new UIManager();
+
         player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2), world);
 
         coin = new Coin();
@@ -56,6 +61,8 @@ public class Main : Game
         player.LoadTextures(Content);
 
         coin.LoadTexture(Content);
+
+        ui.Prepare(Content);
     }
 
     protected override void Update(GameTime gameTime)
@@ -79,6 +86,7 @@ public class Main : Game
 
         }
 
+
         base.Update(gameTime);
     }
 
@@ -87,6 +95,9 @@ public class Main : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         _spriteBatch.Begin();
+
+        ui.DrawText(_spriteBatch, $"Score: " + scoreManager.score);
+
 
         player.Spawn(_spriteBatch, gameTime);
 

@@ -85,3 +85,10 @@
 /processorParam:TextureFormat=Color
 /build:textures/snakeDirections/up.png
 
+#begin ui/Default.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:ui/Default.spritefont
+
