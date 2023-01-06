@@ -2,7 +2,7 @@ namespace Snake;
 
 public class World
 {
-    private int padding { get; set; }
+    public int padding { get; set; }
     public int worldWidth { get; set; }
     public int worldHeight { get; set; }
 

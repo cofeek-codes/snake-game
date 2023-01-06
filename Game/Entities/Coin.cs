@@ -1,4 +1,5 @@
 using System;
+using Engine.Utils;
 using Engine.Utils.Converters;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -14,9 +15,11 @@ public class Coin
     public Rectangle position { get; set; }
 
     public bool isCollected { get; set; } = false;
-    public Coin()
+    public Coin(World world)
     {
-
+        int initX = Randomizer.Randomize(world.padding, world.worldWidth);
+        int initY = Randomizer.Randomize(world.padding, world.worldWidth);
+        position = RectangleConverter.VectorToRectangle(new Vector2(initX, initY));
     }
 
     public void LoadTexture(ContentManager Content)
@@ -34,5 +37,16 @@ public class Coin
         Rectangle newPosition = RectangleConverter.VectorToRectangle(new Vector2(x, y));
 
         drawer.Draw(texture, newPosition, Color.White);
+    }
+
+    public void InitialSpawn(SpriteBatch drawer)
+    {
+        drawer.Draw(texture, position, Color.White);
+    }
+
+    public void TestPosition()
+    {
+        Console.WriteLine(position.X.ToString());
+        Console.WriteLine(position.Y.ToString());
     }
 }

@@ -40,7 +40,7 @@ public class Main : Game
         player = new Player(RectangleConverter.VectorToRectangle(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2)));
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
         PreferredBackBufferHeight);
-        coin = new Coin();
+        coin = new Coin(world);
         scoreManager = new ScoreManager();
 
 
@@ -66,12 +66,7 @@ public class Main : Game
 
         player.Move(gameTime);
 
-        if (player.position.Intersects(coin.position))
-        {
-            coin.isCollected = true;
 
-            scoreManager.AddPoint();
-        }
 
         base.Update(gameTime);
     }
@@ -84,7 +79,13 @@ public class Main : Game
 
         player.Spawn(_spriteBatch, gameTime);
 
-        coin.Respawn(world, _spriteBatch, gameTime);
+        coin.InitialSpawn(_spriteBatch);
+
+        if (player.position.Intersects(coin.position))
+        {
+            coin.Respawn(world, _spriteBatch, gameTime);
+            scoreManager.AddPoint();
+        }
 
         _spriteBatch.End();
 
