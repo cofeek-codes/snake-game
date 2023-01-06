@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 using Snake.Entities;
+using Snake.Score;
 using Snake.Structs.Enums;
 
 namespace Snake;
@@ -19,12 +20,13 @@ public class Main : Game
     public World world;
 
     public Coin coin;
+
+    public ScoreManager scoreManager;
     public Main()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-
         Window.Title = "Snake";
         // _graphics.PreferredBackBufferWidth = 900;
         // _graphics.PreferredBackBufferHeight = 1200;
@@ -36,6 +38,7 @@ public class Main : Game
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
         PreferredBackBufferHeight);
         coin = new Coin();
+        scoreManager = new ScoreManager();
 
         base.Initialize();
     }
@@ -58,7 +61,12 @@ public class Main : Game
 
         player.Move(gameTime);
 
+        if (player.position.Intersects(coin.position) && coin.isCollected == false)
+        {
+            coin.Respawn(world, _spriteBatch);
+            scoreManager.AddPoint();
 
+        }
 
         base.Update(gameTime);
     }
@@ -71,7 +79,6 @@ public class Main : Game
 
         player.Spawn(_spriteBatch, gameTime);
 
-        // coin.Respawn(world, _spriteBatch);
         coin.InitialSpawn(_spriteBatch);
 
         _spriteBatch.End();

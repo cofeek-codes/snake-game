@@ -33,11 +33,13 @@ public class Coin
 
         Vector2 newPosition = new Vector2(x, y);
 
-        drawer.Draw(texture, newPosition, Color.White);
+        position = RectangleConverter.VectorToRectangle(newPosition);
     }
 
     public void InitialSpawn(SpriteBatch drawer)
     {
         drawer.Draw(texture, position, Color.White);
+
+        Console.WriteLine(position.ToString());
     }
 }
