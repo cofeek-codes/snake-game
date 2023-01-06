@@ -60,7 +60,7 @@ public class Main : Game
 
         player.LoadTextures(Content);
 
-        coin.LoadTexture(Content);
+        coin.LoadContent(Content);
 
         ui.Prepare(Content);
     }
@@ -96,7 +96,7 @@ public class Main : Game
 
         _spriteBatch.Begin();
 
-        ui.DrawText(_spriteBatch, $"Score: " + scoreManager.score);
+        ui.DrawText(_spriteBatch, "Score: " + scoreManager.score);
 
 
         player.Spawn(_spriteBatch, gameTime);

@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/audio/coinCollect.mp3</File>
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/coin.png</File>
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snake.png</File>
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/textures/snakeDirections/down.png</File>
@@ -13,6 +14,7 @@
     <File>C:/Users/cofeek-codes/Desktop/myGames/mainSnake/Content/ui/Default.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

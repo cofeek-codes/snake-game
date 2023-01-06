@@ -13,6 +13,12 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin audio/coinCollect.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:audio/coinCollect.mp3
+
 #begin textures/coin.png
 /importer:TextureImporter
 /processor:TextureProcessor

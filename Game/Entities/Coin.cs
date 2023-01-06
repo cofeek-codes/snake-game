@@ -1,6 +1,7 @@
 using System;
 using Engine.Utils.Converters;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -13,19 +14,24 @@ public class Coin
 
     public Rectangle position { get; set; }
 
+    private SoundEffect coinCollectSfx;
+
     public bool isCollected { get; set; } = false;
     public Coin()
     {
         this.position = RectangleConverter.VectorToRectangle(new Vector2(200, 300));
     }
 
-    public void LoadTexture(ContentManager Content)
+    public void LoadContent(ContentManager Content)
     {
         texture = Content.Load<Texture2D>("textures/coin");
+        coinCollectSfx = Content.Load<SoundEffect>("audio/coinCollect");
     }
 
     public void Respawn(World world, SpriteBatch drawer)
     {
+        coinCollectSfx.Play();
+
         Random randomizer = new Random();
 
         float x = randomizer.Next(world.container.Left, world.container.Right);

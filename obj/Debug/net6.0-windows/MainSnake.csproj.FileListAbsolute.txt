@@ -42,3 +42,5 @@ C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content
 C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content\textures\snakeDirections\right.xnb
 C:\Users\cofeek-codes\Desktop\myGames\MainSnake\bin\Debug\net6.0-windows\Content\textures\snakeDirections\up.xnb
 C:\Users\cofeek-codes\Desktop\myGames\mainSnake\bin\Debug\net6.0-windows\Content\ui\Default.xnb
+C:\Users\cofeek-codes\Desktop\myGames\mainSnake\bin\Debug\net6.0-windows\Content\audio\coinCollect.wma
+C:\Users\cofeek-codes\Desktop\myGames\mainSnake\bin\Debug\net6.0-windows\Content\audio\coinCollect.xnb
