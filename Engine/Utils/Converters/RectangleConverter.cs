@@ -12,4 +12,10 @@ public class RectangleConverter
 
         return new Rectangle(convertablePoint, new Point(32, 32));
     }
+
+    public static Vector2 RectangleToVector(Rectangle rect)
+    {
+
+        return new Vector2(rect.Location.X, rect.Location.Y);
+    }
 }

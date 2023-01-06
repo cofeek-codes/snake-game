@@ -28,8 +28,8 @@ public class Coin
     {
         Random randomizer = new Random();
 
-        float x = randomizer.Next(0, world.worldWidth);
-        float y = randomizer.Next(0, world.worldHeight);
+        float x = randomizer.Next(world.container.Left, world.container.Right);
+        float y = randomizer.Next(world.container.Top, world.container.Bottom);
 
         Vector2 newPosition = new Vector2(x, y);
 

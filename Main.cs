@@ -1,4 +1,6 @@
 ﻿using System;
+using Engine.Utils.Checkers;
+using Engine.Utils.Converters;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -34,11 +36,15 @@ public class Main : Game
 
     protected override void Initialize()
     {
-        player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2));
+
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
         PreferredBackBufferHeight);
-        coin = new Coin();
+
         scoreManager = new ScoreManager();
+
+        player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2), world);
+
+        coin = new Coin();
 
         base.Initialize();
     }
@@ -60,6 +66,11 @@ public class Main : Game
 
 
         player.Move(gameTime);
+
+        if (OutOfBounds.Test(player, world))
+        {
+            player.position = RectangleConverter.VectorToRectangle(OutOfBounds.ByDirection(player, world, player.direction));
+        }
 
         if (player.position.Intersects(coin.position) && coin.isCollected == false)
         {

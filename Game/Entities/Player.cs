@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
-using Engine.Utils.Converters;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using Engine.Utils.Converters;
+
 using Snake.Structs.Enums;
+using Engine.Utils.Checkers;
 
 namespace Snake.Entities;
 
@@ -22,11 +24,13 @@ public class Player
     }
 
     private Dictionary<string, Texture2D> texturePack;
-
+    public float basicSpeed { get; set; } = 100f;
     public MovementDirection direction { get; set; }
-    public Player(Vector2 position)
+
+    public World world;
+    public Player(Vector2 position, World world)
     {
-        this.position = RectangleConverter.VectorToRectangle(new Vector2(position.X, position.Y));
+        this.position = RectangleConverter.VectorToRectangle(position);
     }
 
     public void LoadTextures(ContentManager Content)
@@ -59,7 +63,7 @@ public class Player
 
 
 
-    public void Move(GameTime gameTime, float basicSpeed = 100f)
+    public void Move(GameTime gameTime)
     {
         float speed = basicSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -97,5 +101,7 @@ public class Player
 
                 break;
         }
+
+
     }
 }
