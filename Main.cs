@@ -49,7 +49,7 @@ public class Main : Game
 
         player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2), world);
 
-        coin = new Coin();
+        coin = new Coin(world);
 
         base.Initialize();
     }
@@ -83,6 +83,8 @@ public class Main : Game
         {
             coin.Respawn(world, _spriteBatch);
             scoreManager.AddPoint();
+            player.basicSpeed += 15f;
+
 
         }
 

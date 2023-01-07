@@ -17,9 +17,16 @@ public class Coin
     private SoundEffect coinCollectSfx;
 
     public bool isCollected { get; set; } = false;
-    public Coin()
+    public Coin(World world)
     {
-        this.position = RectangleConverter.VectorToRectangle(new Vector2(200, 300));
+        Random randomizer = new Random();
+
+        float x = randomizer.Next(world.container.Left, world.container.Right);
+        float y = randomizer.Next(world.container.Top, world.container.Bottom);
+
+        Vector2 newPosition = new Vector2(x, y);
+
+        this.position = RectangleConverter.VectorToRectangle(newPosition);
     }
 
     public void LoadContent(ContentManager Content)

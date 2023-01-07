@@ -15,6 +15,7 @@ namespace Snake.Entities;
 public class Player
 {
     public Rectangle position { get; set; }
+
     public Texture2D texture
     {
         get
@@ -68,6 +69,7 @@ public class Player
         float speed = basicSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         KeyboardState ks = Keyboard.GetState();
+
         if (ks.IsKeyDown(Keys.A)) this.direction = MovementDirection.LEFT;
         if (ks.IsKeyDown(Keys.D)) this.direction = MovementDirection.RIGHT;
         if (ks.IsKeyDown(Keys.W)) this.direction = MovementDirection.UP;
