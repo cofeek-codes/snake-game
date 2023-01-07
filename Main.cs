@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Snake.Entities;
 using Snake.Score;
 using Snake.UI;
+using Snake.Tests;
 
 namespace Snake;
 
@@ -16,6 +17,7 @@ public class Main : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+
 
 
     public Player player;
@@ -111,6 +113,10 @@ public class Main : Game
         player.Spawn(_spriteBatch, gameTime);
 
         coin.InitialSpawn(_spriteBatch);
+
+
+        ObstaclePlacingTest.Test(world, obstacle.startPosition, obstacle.direction);
+
 
         obstacle.createWalls(world, _spriteBatch);
 

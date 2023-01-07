@@ -15,9 +15,11 @@ public class Obstacle
 
     public Rectangle startPosition { get; set; }
 
-    private int wallStack = 5;
-    private int prevStackElementPosition;
-    private PositionalDirection direction;
+    private int wallStackCount = 5;
+    private int inStackElementPosition;
+
+    private Vector2 inStackElementCoords;
+    public PositionalDirection direction;
 
 
     public Obstacle(World world)
@@ -27,6 +29,8 @@ public class Obstacle
         Vector2 startCoords = new Vector2(r.Next(world.container.Left, world.container.Right), r.Next(world.container.Top, world.container.Bottom));
 
         startPosition = U.rect(startCoords);
+
+
 
     }
 
@@ -42,16 +46,50 @@ public class Obstacle
 
         if (r.Next(0, 1) == 0) direction = PositionalDirection.HORIZONTAL; else direction = PositionalDirection.VERTICAL;
 
-        int testPosition = startPosition.Right;
 
-        for (int i = 0; i <= 5; ++i)
+
+        // for (int i = 0; i <= 5; ++i)
+        // {
+        //     Console.WriteLine($"Before {i}: {testPosition}");
+        //     testPosition += testPosition;
+        //     Console.WriteLine($"After {i}: {testPosition}");
+
+
+
+        // }
+
+        for (int i = 0; i <= wallStackCount; ++i)
         {
-            Console.WriteLine($"Before {i}: {testPosition}");
-            testPosition += testPosition;
-            Console.WriteLine($"After {i}: {testPosition}");
+            if (i == 0 && direction == PositionalDirection.HORIZONTAL)
+            {
+                inStackElementPosition = startPosition.Width;
+                drawer.Draw(texture, startPosition, Color.White);
+            }
+            if (i == 0 && direction == PositionalDirection.VERTICAL)
+            {
+                inStackElementPosition = startPosition.Height;
+                drawer.Draw(texture, startPosition, Color.White);
+            }
+
+            if (i > 0 && direction == PositionalDirection.HORIZONTAL)
+            {
+                inStackElementPosition += inStackElementPosition;
+
+                inStackElementCoords = new Vector2(inStackElementPosition, startPosition.Y);
+
+                drawer.Draw(texture, U.rect(inStackElementCoords), Color.White);
+            }
+
+            if (i > 0 && direction == PositionalDirection.VERTICAL)
+            {
+                inStackElementPosition += inStackElementPosition;
+
+                inStackElementCoords = new Vector2(startPosition.X, inStackElementPosition);
+
+                drawer.Draw(texture, U.rect(inStackElementCoords), Color.White);
 
 
-
+            }
         }
     }
 
