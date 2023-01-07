@@ -14,7 +14,7 @@ public class UIManager
     }
 
 
-    public void Prepare(ContentManager Content)
+    public void Init(ContentManager Content)
     {
         font = Content.Load<SpriteFont>("ui/Default");
     }
