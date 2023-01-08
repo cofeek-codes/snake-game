@@ -115,10 +115,7 @@ public class Main : Game
         coin.InitialSpawn(_spriteBatch);
 
 
-        ObstaclePlacingTest.Test(world, obstacle.startPosition, obstacle.direction);
 
-
-        obstacle.createWalls(world, _spriteBatch);
 
 
         _spriteBatch.End();
