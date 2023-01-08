@@ -44,7 +44,7 @@ public class Obstacle
     {
         Random r = new Random();
 
-        if (r.Next(0, 1) == 0) direction = PositionalDirection.HORIZONTAL; else direction = PositionalDirection.VERTICAL;
+        if (r.NextSingle() <= 0.5f) direction = PositionalDirection.HORIZONTAL; else direction = PositionalDirection.VERTICAL;
 
 
 
