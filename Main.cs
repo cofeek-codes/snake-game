@@ -10,6 +10,7 @@ using Snake.Entities;
 using Snake.Score;
 using Snake.UI;
 using Snake.Tests;
+using Snake.Structs.Enums;
 
 namespace Snake;
 
@@ -31,8 +32,32 @@ public class Main : Game
     public ScoreManager scoreManager;
 
     public UIManager ui;
+
+    GameState state = GameState.MENU;
+
+    MenuOptions option = MenuOptions.NewGame;
+
+    int optionsCounter
+    {
+        get
+        {
+            return optionsCounter;
+        }
+        set
+        {
+            if (value > 2) optionsCounter = 2;
+            if (value < 0) optionsCounter = 0;
+            else optionsCounter = value;
+
+            if (optionsCounter == 0) option = MenuOptions.Continue;
+            else if (optionsCounter == 1) option = MenuOptions.NewGame;
+            else option = MenuOptions.Exit;
+
+        }
+    }
     public Main()
     {
+
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
