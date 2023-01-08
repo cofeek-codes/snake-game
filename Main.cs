@@ -1,14 +1,15 @@
-﻿using System;
+﻿
 using Engine.Utils.Checkers;
 using Engine.Utils.Converters;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 using Snake.Entities;
 using Snake.Score;
-using Snake.Structs.Enums;
 using Snake.UI;
+using Snake.Tests;
 
 namespace Snake;
 
@@ -18,11 +19,14 @@ public class Main : Game
     private SpriteBatch _spriteBatch;
 
 
+
     public Player player;
 
     public World world;
 
     public Coin coin;
+
+    public Obstacle obstacle;
 
     public ScoreManager scoreManager;
 
@@ -47,6 +51,8 @@ public class Main : Game
 
         ui = new UIManager();
 
+        obstacle = new Obstacle(world);
+
         player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2), world);
 
         coin = new Coin(world);
@@ -62,7 +68,10 @@ public class Main : Game
 
         coin.LoadContent(Content);
 
-        ui.Prepare(Content);
+        obstacle.LoadContent(Content);
+
+
+        ui.Init(Content);
     }
 
     protected override void Update(GameTime gameTime)
@@ -104,6 +113,13 @@ public class Main : Game
         player.Spawn(_spriteBatch, gameTime);
 
         coin.InitialSpawn(_spriteBatch);
+
+
+        ObstaclePlacingTest.Test(world, obstacle.startPosition, obstacle.direction);
+
+
+        obstacle.createWalls(world, _spriteBatch);
+
 
         _spriteBatch.End();
 
