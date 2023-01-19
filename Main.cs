@@ -8,9 +8,9 @@ using Microsoft.Xna.Framework.Input;
 
 using Snake.Entities;
 using Snake.Score;
+using Snake.State;
 using Snake.UI;
-using Snake.Tests;
-using Snake.Structs.Enums;
+
 
 namespace Snake;
 
@@ -37,7 +37,7 @@ public class Main : Game
 
 
 
-    
+
     public Main()
     {
 
@@ -51,13 +51,18 @@ public class Main : Game
 
     protected override void Initialize()
     {
+        ui = new UIManager();
+
+
+
+
+
 
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
         PreferredBackBufferHeight);
 
         scoreManager = new ScoreManager();
 
-        ui = new UIManager();
 
         mainMenu = new MainMenu();
 
@@ -82,6 +87,7 @@ public class Main : Game
 
 
         ui.Init(Content, _spriteBatch);
+        mainMenu.Init(Content.Load<SpriteFont>("ui/Default"));
     }
 
     protected override void Update(GameTime gameTime)
@@ -125,7 +131,7 @@ public class Main : Game
         coin.InitialSpawn(_spriteBatch);
 
 
-
+        mainMenu.Display(_spriteBatch);
 
 
         _spriteBatch.End();

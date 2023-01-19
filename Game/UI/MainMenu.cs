@@ -1,45 +1,50 @@
 ﻿
 
-using Accessibility;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Snake.Structs;
-using Snake.Structs.Enums;
 using System.Collections.Generic;
-using System.Linq;
+
 
 namespace Snake.UI
 {
-    public class MainMenu : UIManager
+    public class MainMenu
     {
         private string title = "Snake Game";
         private string copyright = "by cofeek-codes";
-
+        // private SpriteBatch drawer;
         private List<string> menuControls = new List<string>();
-public MainMenu()
+
+        private SpriteFont font;
+        public MainMenu()
         {
-        
+
         }
-        public void Display()
+
+        public void Init(SpriteFont font)
+        {
+            this.font = font;
+        }
+        public void Display(SpriteBatch drawer)
         {
             float x = CVector.Center.X;
             float y = CVector.Center.Y;
-           
-            // title
-            drawer.DrawString(base.font, title, CVector.Center, Color.White);
+
+            // titles
+            drawer.DrawString(font, title, CVector.Center, Color.White);
             //copyright
-        drawer.DrawString(base.font, copyright, new Vector2(x, y+=215), Color.White);
+            drawer.DrawString(font, copyright, new Vector2(x, y += 215), Color.White);
 
 
             foreach (string control in menuControls)
             {
                 int i = 1;
-                drawer.DrawString(base.font, control, new Vector2(x, y+=15 * i), Color.White);
+                drawer.DrawString(font, control, new Vector2(x, y += 15 * i), Color.White);
                 i++;
             }
 
         }
     }
 
-    
+
 }

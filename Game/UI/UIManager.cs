@@ -6,15 +6,15 @@ namespace Snake.UI;
 
 public class UIManager
 {
-    protected SpriteFont font;
-    protected SpriteBatch drawer;
+    public SpriteFont font;
+    private SpriteBatch drawer;
 
     public UIManager()
     {
-       
+
     }
 
-    
+
 
     public void Init(ContentManager Content, SpriteBatch drawer)
     {
