@@ -33,28 +33,11 @@ public class Main : Game
 
     public UIManager ui;
 
-    GameState state = GameState.MENU;
+    public MainMenu mainMenu;
 
-    MenuOptions option = MenuOptions.NewGame;
 
-    int optionsCounter
-    {
-        get
-        {
-            return optionsCounter;
-        }
-        set
-        {
-            if (value > 2) optionsCounter = 2;
-            if (value < 0) optionsCounter = 0;
-            else optionsCounter = value;
 
-            if (optionsCounter == 0) option = MenuOptions.Continue;
-            else if (optionsCounter == 1) option = MenuOptions.NewGame;
-            else option = MenuOptions.Exit;
-
-        }
-    }
+    
     public Main()
     {
 
@@ -76,9 +59,11 @@ public class Main : Game
 
         ui = new UIManager();
 
+        mainMenu = new MainMenu();
+
         obstacle = new Obstacle(world);
 
-        player = new Player(new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2), world);
+        player = new Player(world);
 
         coin = new Coin(world);
 
@@ -96,7 +81,7 @@ public class Main : Game
         obstacle.LoadContent(Content);
 
 
-        ui.Init(Content);
+        ui.Init(Content, _spriteBatch);
     }
 
     protected override void Update(GameTime gameTime)
@@ -132,7 +117,7 @@ public class Main : Game
 
         _spriteBatch.Begin();
 
-        ui.DrawText(_spriteBatch, "Score: " + scoreManager.score);
+        ui.DrawText("Score: " + scoreManager.score);
 
 
         player.Spawn(_spriteBatch, gameTime);

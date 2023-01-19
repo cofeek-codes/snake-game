@@ -6,19 +6,22 @@ namespace Snake.UI;
 
 public class UIManager
 {
-    private SpriteFont font;
+    protected SpriteFont font;
+    protected SpriteBatch drawer;
 
     public UIManager()
     {
-
+       
     }
 
+    
 
-    public void Init(ContentManager Content)
+    public void Init(ContentManager Content, SpriteBatch drawer)
     {
         font = Content.Load<SpriteFont>("ui/Default");
+        this.drawer = drawer;
     }
-    public void DrawText(SpriteBatch drawer, string text)
+    public void DrawText(string text)
     {
         drawer.DrawString(font, text, new Vector2(25, 25), Color.Black);
     }

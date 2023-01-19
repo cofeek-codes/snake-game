@@ -7537,19 +7537,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\MainSnake.csproj",
+      "projectUniqueName": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj",
       "projectName": "MainSnake",
-      "projectPath": "c:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\MainSnake.csproj",
+      "projectPath": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj",
       "packagesPath": "C:\\Users\\cofeek-codes\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\cofeek-codes\\Desktop\\myGames\\MainSnake\\obj\\",
+      "outputPath": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cofeek-codes\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cofeek-codes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7596,7 +7598,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

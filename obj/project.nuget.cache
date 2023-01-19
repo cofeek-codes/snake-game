@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5M8Sz79B2Yehj9UWIeg67iAamnb5dLrrXdT6Wy+Bd9g5zzv1qZqk3D0JMJJsjsRYutscXYuB8jNoUaanXJ2oxA==",
+  "dgSpecHash": "JuGbavR7xsVfpr45Vc1kSPEGlqz5u2HPhVXVGRwruQHTMPGTYy1iNvY8uJO3pxUHArGuR28cjOrnzSxiXRyETA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cofeek-codes\\Desktop\\myGames\\mainSnake\\MainSnake.csproj",
+  "projectFilePath": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cofeek-codes\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\cofeek-codes\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

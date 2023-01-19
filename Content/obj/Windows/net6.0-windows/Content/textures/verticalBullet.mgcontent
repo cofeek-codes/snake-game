@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/snake.png</SourceFile>
-  <SourceTime>2023-01-19T20:11:52.5659805+05:00</SourceTime>
-  <DestFile>C:/Users/cofeek-codes/Desktop/Snake/Content/bin/Windows/Content/textures/snake.xnb</DestFile>
-  <DestTime>2023-01-19T22:08:38.8815244+05:00</DestTime>
+  <SourceFile>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/verticalBullet.png</SourceFile>
+  <SourceTime>2023-01-19T20:11:52.5669807+05:00</SourceTime>
+  <DestFile>C:/Users/cofeek-codes/Desktop/Snake/Content/bin/Windows/Content/textures/verticalBullet.xnb</DestFile>
+  <DestTime>2023-01-19T20:27:07.3687927+05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

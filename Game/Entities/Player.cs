@@ -29,9 +29,16 @@ public class Player
     public MovementDirection direction { get; set; }
 
     public World world;
-    public Player(Vector2 position, World world)
+    public Player(World world)
     {
-        this.position = RectangleConverter.VectorToRectangle(position);
+        Random randomizer = new Random();
+
+        float x = randomizer.Next(world.container.Left, world.container.Right);
+        float y = randomizer.Next(world.container.Top, world.container.Bottom);
+
+        Vector2 newPosition = new Vector2(x, y);
+
+        this.position = RectangleConverter.VectorToRectangle(newPosition);
     }
 
     public void LoadTextures(ContentManager Content)
