@@ -61,7 +61,7 @@ public class Main : Game
 
         GameState.SetState(ApplicationState.MENU);
 
-        
+
 
         ui = new UIManager();
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
@@ -93,17 +93,17 @@ public class Main : Game
 
 
         ui.Init(Content, _spriteBatch);
-        MainMenu.Init(Content.Load<SpriteFont>("ui/Default"));
+        MainMenu.Init();
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (GameState.GetCurrentState() == ApplicationState.GAME) 
-        GameState.RunningUpdate(player, gameTime, world, coin, _spriteBatch, scoreManager); 
+        if (GameState.GetCurrentState() == ApplicationState.GAME)
+            GameState.RunningUpdate(player, gameTime, world, coin, _spriteBatch, scoreManager);
 
         base.Update(gameTime);
     }
-     
+
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -111,17 +111,17 @@ public class Main : Game
         {
 
 
-        _spriteBatch.Begin();
+            _spriteBatch.Begin();
 
-        GameState.RunningDraw(player, _spriteBatch, gameTime, coin);
+            GameState.RunningDraw(player, _spriteBatch, gameTime, coin);
 
 
-        _spriteBatch.End();
+            _spriteBatch.End();
 
         }
 
         if (GameState.GetCurrentState().Equals(ApplicationState.MENU))
-        
+
         {
 
             renderer.BeginLayout(gameTime);
