@@ -4,18 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/audio/coinCollect.mp3</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/brick.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/brickTest.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/coin.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/horizontalBullet.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/snake.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/snakeDirections/down.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/snakeDirections/left.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/snakeDirections/right.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/snakeDirections/up.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/textures/verticalBullet.png</File>
-    <File>C:/Users/cofeek-codes/Desktop/Snake/Content/ui/Default.spritefont</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/audio/coinCollect.mp3</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/brick.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/brickTest.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/coin.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/horizontalBullet.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/snake.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/snakeDirections/down.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/snakeDirections/left.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/snakeDirections/right.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/snakeDirections/up.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/textures/verticalBullet.png</File>
+    <File>C:/Users/cofeek-codes/Desktop/snake-game/Content/ui/Default.spritefont</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

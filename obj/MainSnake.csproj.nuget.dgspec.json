@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj": {}
+    "C:\\Users\\cofeek-codes\\Desktop\\snake-game\\MainSnake.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj": {
+    "C:\\Users\\cofeek-codes\\Desktop\\snake-game\\MainSnake.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj",
+        "projectUniqueName": "C:\\Users\\cofeek-codes\\Desktop\\snake-game\\MainSnake.csproj",
         "projectName": "MainSnake",
-        "projectPath": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\MainSnake.csproj",
+        "projectPath": "C:\\Users\\cofeek-codes\\Desktop\\snake-game\\MainSnake.csproj",
         "packagesPath": "C:\\Users\\cofeek-codes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cofeek-codes\\Desktop\\Snake\\obj\\",
+        "outputPath": "C:\\Users\\cofeek-codes\\Desktop\\snake-game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cofeek-codes\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.89.3, )"
+            },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
               "version": "[3.8.1.303, )"

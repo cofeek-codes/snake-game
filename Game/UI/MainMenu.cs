@@ -1,49 +1,69 @@
 ﻿
 
 using Microsoft.Xna.Framework;
+
 using Microsoft.Xna.Framework.Graphics;
+
 using Snake.Structs;
 using System.Collections.Generic;
 
+using ImGuiNET;
+
+using Im = System.Numerics;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Snake.UI
 {
     public class MainMenu
     {
-        private string title = "Snake Game";
-        private string copyright = "by cofeek-codes";
+        private static string title = "Snake Game";
+        private static string copyright = "by cofeek-codes";
         // private SpriteBatch drawer;
         private List<string> menuControls = new List<string>();
 
-        private SpriteFont font;
+
+        private static int w = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+        private static int h = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+
+        private static Im.Vector2 screenSize = new Im.Vector2(w, h);
+
+        private static SpriteFont _font;
+
+        private ImGuiStylePtr _style = ImGui.GetStyle();
+
+        private static ImGuiIOPtr io = ImGui.GetIO();
         public MainMenu()
         {
 
         }
 
-        public void Init(SpriteFont font)
+        public static void Init(SpriteFont font)
         {
-            this.font = font;
+            _font = font;
+
+            io.Fonts.AddFontFromFileTTF("Content\\fonts\\andy.ttf", 15);
         }
-        public void Display(SpriteBatch drawer)
+
+
+
+        public static void Render()
         {
-            float x = CVector.Center.X;
-            float y = CVector.Center.Y;
+            ImGui.SetNextWindowSize(screenSize);
+            ImGui.SetNextWindowPos(new Im.Vector2(0, 0));
 
-            // titles
-            drawer.DrawString(font, title, CVector.Center, Color.White);
-            //copyright
-            drawer.DrawString(font, copyright, new Vector2(x, y += 215), Color.White);
+            ImGui.Begin("snake game", ImGuiWindowFlags.NoTitleBar);
 
+            //title
+            ImGui.SetCursorPos(new Im.Vector2(350, 50));
+            ImGui.Text(title);
 
-            foreach (string control in menuControls)
-            {
-                int i = 1;
-                drawer.DrawString(font, control, new Vector2(x, y += 15 * i), Color.White);
-                i++;
-            }
-
+            ImGui.End();
         }
+
+
+
+
     }
 
 

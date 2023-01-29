@@ -9,7 +9,11 @@ using Microsoft.Xna.Framework.Input;
 using Snake.Entities;
 using Snake.Score;
 using Snake.State;
+using Snake.Structs.Enums;
 using Snake.UI;
+using System.Windows.Forms;
+
+using MonoGame.ImGui;
 
 
 namespace Snake;
@@ -35,8 +39,9 @@ public class Main : Game
 
     public MainMenu mainMenu;
 
+    public GameState gameState;
 
-
+    public ImGuiRenderer renderer;
 
     public Main()
     {
@@ -51,13 +56,14 @@ public class Main : Game
 
     protected override void Initialize()
     {
+
+        renderer = new ImGuiRenderer(this).Initialize().RebuildFontAtlas();
+
+        GameState.SetState(ApplicationState.MENU);
+
+        
+
         ui = new UIManager();
-
-
-
-
-
-
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
         PreferredBackBufferHeight);
 
@@ -87,55 +93,43 @@ public class Main : Game
 
 
         ui.Init(Content, _spriteBatch);
-        mainMenu.Init(Content.Load<SpriteFont>("ui/Default"));
+        MainMenu.Init(Content.Load<SpriteFont>("ui/Default"));
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
-
-
-
-        player.Move(gameTime);
-
-        if (OutOfBounds.Test(player, world))
-        {
-            player.position = RectangleConverter.VectorToRectangle(OutOfBounds.ByDirection(player, world, player.direction));
-        }
-
-        if (player.position.Intersects(coin.position) && coin.isCollected == false)
-        {
-            coin.Respawn(world, _spriteBatch);
-            scoreManager.AddPoint();
-            player.basicSpeed += 15f;
-
-
-        }
-
+        if (GameState.GetCurrentState() == ApplicationState.GAME) 
+        GameState.RunningUpdate(player, gameTime, world, coin, _spriteBatch, scoreManager); 
 
         base.Update(gameTime);
     }
-
+     
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
+        if (GameState.GetCurrentState() == ApplicationState.GAME)
+        {
+
 
         _spriteBatch.Begin();
 
-        ui.DrawText("Score: " + scoreManager.score);
-
-
-        player.Spawn(_spriteBatch, gameTime);
-
-        coin.InitialSpawn(_spriteBatch);
-
-
-        mainMenu.Display(_spriteBatch);
+        GameState.RunningDraw(player, _spriteBatch, gameTime, coin);
 
 
         _spriteBatch.End();
 
+        }
+
+        if (GameState.GetCurrentState().Equals(ApplicationState.MENU))
+        
+        {
+
+            renderer.BeginLayout(gameTime);
+            MainMenu.Render();
+            renderer.EndLayout();
+
+
+        }
 
         base.Draw(gameTime);
     }

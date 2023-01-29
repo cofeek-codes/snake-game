@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/cofeek-codes/Desktop/Snake/Content/audio/coinCollect.mp3</SourceFile>
-  <SourceTime>2023-01-19T20:11:52.5479773+05:00</SourceTime>
-  <DestFile>C:/Users/cofeek-codes/Desktop/Snake/Content/bin/Windows/Content/audio/coinCollect.xnb</DestFile>
-  <DestTime>2023-01-19T22:08:38.846516+05:00</DestTime>
+  <SourceFile>C:/Users/cofeek-codes/Desktop/snake-game/Content/audio/coinCollect.mp3</SourceFile>
+  <SourceTime>2023-01-29T20:13:48.1463119+05:00</SourceTime>
+  <DestFile>C:/Users/cofeek-codes/Desktop/snake-game/Content/bin/Windows/Content/audio/coinCollect.xnb</DestFile>
+  <DestTime>2023-01-29T20:15:45.8066481+05:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
