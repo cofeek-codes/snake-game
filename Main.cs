@@ -44,6 +44,9 @@ public class Main : Game
 
     public ImGuiRenderer renderer;
 
+    KeyboardState previousState;
+
+    public bool isPaused = false;
     public ImFontPtr andyFont;
     public Main()
     {
@@ -64,7 +67,7 @@ public class Main : Game
 
         GameState.SetState(ApplicationState.MENU);
 
-
+        previousState = Keyboard.GetState();
 
         ui = new UIManager();
         world = new World(_graphics.PreferredBackBufferWidth, _graphics.
@@ -100,50 +103,46 @@ public class Main : Game
         MainMenu.Init(this);
     }
 
+
     protected override void Update(GameTime gameTime)
     {
-        if (GameState.GetCurrentState() == ApplicationState.GAME)
+        KeyboardState currentState = Keyboard.GetState();
+        if (currentState.IsKeyDown(Keys.Escape) && !previousState.IsKeyDown(Keys.Escape))
+        {
+            GameState.SetState(ApplicationState.MENU);
+            isPaused = true;
+        }
+
+        if (GameState.GetCurrentState() == ApplicationState.GAME && isPaused == false)
         {
 
             GameState.RunningUpdate(player, gameTime, world, coin, _spriteBatch, scoreManager);
 
-
         }
+        else
 
+            base.Update(gameTime);
 
-
-        base.Update(gameTime);
+        previousState = currentState;
     }
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
-        if (GameState.GetCurrentState() == ApplicationState.GAME)
+
+        if (GameState.GetCurrentState() == ApplicationState.GAME && isPaused == false)
         {
-
-
+            GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
-
             GameState.RunningDraw(player, _spriteBatch, gameTime, coin);
-
-
             _spriteBatch.End();
-
         }
-
-        if (GameState.GetCurrentState().Equals(ApplicationState.MENU))
-
+        else if (GameState.GetCurrentState() == ApplicationState.MENU)
         {
-
-
-
-
             renderer.BeginLayout(gameTime);
             MainMenu.Render();
             renderer.EndLayout();
-
-
         }
+
 
         base.Draw(gameTime);
     }
