@@ -12,6 +12,8 @@ using ImGuiNET;
 using Im = System.Numerics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Snake.State;
+using Snake.Structs.Enums;
 
 namespace Snake.UI
 {
@@ -20,11 +22,15 @@ namespace Snake.UI
         private static string title = "Snake Game";
         private static string copyright = "by cofeek-codes";
         // private SpriteBatch drawer;
-        private static List<string> menuControls = new List<string>() {
+        private static bool newGamePressed = false;
+        private static bool exitPressed = false;
+        private static Game instance;
 
-"New Game", "Exit"
-
+        private static List<string> menuControls = new List<string>()
+        {
+            "New Game", "Exit"
         };
+
 
 
         private static int w = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
@@ -42,10 +48,10 @@ namespace Snake.UI
 
         }
 
-        public static void Init()
+        public static void Init(Game game)
         {
 
-
+            instance = game;
 
         }
 
@@ -61,12 +67,34 @@ namespace Snake.UI
 
             //title
             ImGui.SetCursorPos(new Im.Vector2(350, 50));
-            // ImGui.PushFont(font);
+
             ImGui.Text(title);
 
-            foreach (string control in menuControls) { }
+            int ycoord = 135;
+
+            ImGui.SetCursorPos(new Im.Vector2(350, ycoord));
+
+            if (ImGui.Button(menuControls[0])) newGamePressed = true;
+
+            ycoord += 50;
+
+            ImGui.SetCursorPos(new Im.Vector2(350, ycoord));
+
+            if (ImGui.Button(menuControls[1])) exitPressed = true;
 
 
+
+
+            if (newGamePressed)
+            {
+                GameState.SetState(ApplicationState.GAME);
+
+            }
+
+            if (exitPressed)
+            {
+                instance.Exit();
+            }
 
             ImGui.End();
         }

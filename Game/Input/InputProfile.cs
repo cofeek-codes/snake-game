@@ -14,7 +14,7 @@ public class InputProfile
 
         proifle = new Dictionary<string, Keys>()
         {
-{"Exit", Keys.Escape}
+{"Pause", Keys.Escape}
         };
 
 

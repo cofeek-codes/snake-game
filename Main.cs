@@ -4,17 +4,18 @@ using Engine.Utils.Converters;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 using Snake.Entities;
 using Snake.Score;
 using Snake.State;
+
 using Snake.Structs.Enums;
 using Snake.UI;
-using System.Windows.Forms;
 
 using MonoGame.ImGui;
-
+using ImGuiNET;
+using Microsoft.Xna.Framework.Input;
+using Snake.Input;
 
 namespace Snake;
 
@@ -23,7 +24,7 @@ public class Main : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-
+    public ImGuiIOPtr io;
 
     public Player player;
 
@@ -43,6 +44,7 @@ public class Main : Game
 
     public ImGuiRenderer renderer;
 
+    public ImFontPtr andyFont;
     public Main()
     {
 
@@ -58,6 +60,7 @@ public class Main : Game
     {
 
         renderer = new ImGuiRenderer(this).Initialize().RebuildFontAtlas();
+        io = ImGui.GetIO();
 
         GameState.SetState(ApplicationState.MENU);
 
@@ -93,13 +96,21 @@ public class Main : Game
 
 
         ui.Init(Content, _spriteBatch);
-        MainMenu.Init();
+
+        MainMenu.Init(this);
     }
 
     protected override void Update(GameTime gameTime)
     {
         if (GameState.GetCurrentState() == ApplicationState.GAME)
+        {
+
             GameState.RunningUpdate(player, gameTime, world, coin, _spriteBatch, scoreManager);
+
+
+        }
+
+
 
         base.Update(gameTime);
     }
@@ -123,6 +134,9 @@ public class Main : Game
         if (GameState.GetCurrentState().Equals(ApplicationState.MENU))
 
         {
+
+
+
 
             renderer.BeginLayout(gameTime);
             MainMenu.Render();

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
 
 namespace Snake.Input;
-public class PlayerInput
+public class PlayerInput : InputProfile
 {
     public Dictionary<string, Keys> playerInputProfile { get; set; }
     public PlayerInput()
